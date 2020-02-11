@@ -25,6 +25,16 @@ nav {
             left: 0px;
         }
     }
+    .btn#show {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+        padding: 7.5px;
+        &:hover {
+            color: #333333;
+            // box-shadow: $dp4; Looks like garbage
+        }
+    }
     &.scrolled {
         height: 35px;
         .logo {
@@ -214,16 +224,6 @@ input {
         height: 35px;
         line-height: 35px;
         text-align: center;
-    }
-    &#show {
-        top: 0px;
-        left: 0px;
-        opacity: 1;
-        padding: 7.5px;
-        &:hover {
-            color: #333333;
-            // box-shadow: $dp4; Looks like garbage
-        }
     }
     &#hide {
         opacity: 0;

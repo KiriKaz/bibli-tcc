@@ -32,6 +32,17 @@ nav .logo.toggled {
   left: 0px;
 }
 
+nav .btn#show {
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  padding: 7.5px;
+}
+
+nav .btn#show:hover {
+  color: #333333;
+}
+
 nav.scrolled {
   height: 35px;
 }
@@ -245,17 +256,6 @@ input {
   height: 35px;
   line-height: 35px;
   text-align: center;
-}
-
-.btn#show {
-  top: 0px;
-  left: 0px;
-  opacity: 1;
-  padding: 7.5px;
-}
-
-.btn#show:hover {
-  color: #333333;
 }
 
 .btn#hide {
