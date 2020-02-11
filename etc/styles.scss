@@ -1,4 +1,4 @@
-@import 'shadows';
+@import 'partials/shadows';
 
 * {
     box-sizing: border-box;
@@ -91,25 +91,54 @@ main {
         width: 36vw;
         font-size: 24pt;
     }
-    #monitor {
-        position: absolute;
-        top: 55vh;
-        left: 20vw;
-        width: 350px;
-        height: 350px;
-        opacity: 0;
-        transition: .8s ease-in-out;
-        &.toggled {
-            opacity: 1;
-            top: 45vh;
-            left: 18vw;
+    div#imagem01 {
+        #monitor {
+            position: absolute;
+            top: 55vh;
+            left: 20vw;
+            width: 350px;
+            height: 350px;
+            opacity: 0;
+            transition: .8s ease-in-out;
+            &.toggled {
+                opacity: 1;
+                top: 45vh;
+                left: 18vw;
+            }
         }
-    }
-    #cursor {
-        position: absolute;
-        top: 75vh;
-        left: 40vw;
-        opacity: 0;
+        #cursor {
+            position: absolute;
+            top: 75vh;
+            left: 40vw;
+            opacity: 0;
+        }
+        .ling {
+            position: relative;
+            background-color: #cccc00;
+            color: #373737;
+            border-radius: 10px;
+            // border-top-left-radius: 10px;
+            // border-bottom-left-radius: 10px;
+            padding: 0 10px;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 0;
+                height: 0;
+                border: 16px solid transparent;
+                border-top-color: #cccc00;
+                border-bottom: 0;
+                border-left: 0;
+                margin-left: -8px;
+                margin-bottom: -16px;
+            }
+            // &:nth-of-type(1) {
+            //     left: 20%;
+            //     top: 1vh;
+            // }
+        }
     }
 }
 

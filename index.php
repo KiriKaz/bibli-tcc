@@ -24,7 +24,7 @@
         </div>
         <nav id="nav">
             <div class="btn" id="show"><i class="fas fa-bars"></i></div>
-            <img class="logo" src="etc/XL-logo.svg" alt="Logotipo">
+            <img class="logo" src="etc/image_assets/XL-logo.svg" alt="Logotipo">
         </nav>
         <div id="hamburguer-menu">
             <header>
@@ -42,8 +42,15 @@
             <div class="shadowed"><section id="sec-1"></section></div>
             <h1 id="intro01">The sky above</h1>
             <p id="intro01-01">the port was the color of television, tuned to a dead channel.</p>
-            <img src="etc/monitor.svg" alt="Um monitor." id="monitor">
-            <img src="etc/cursor.svg" alt="Um cursor." id="cursor">
+            <div id="imagem01">
+                <img src="etc/image_assets/monitor.svg" alt="Um monitor." id="monitor">
+                <img src="etc/image_assets/cursor.svg" alt="Um cursor." id="cursor">
+                <!-- <span class="ling">PHP</span>
+                <span class="ling">PHP1</span>
+                <span class="ling">PHP2</span>
+                <span class="ling">PHP3</span>
+                <span class="ling">PHP4</span> -->
+            </div>
             <div class="shadowed"><section id="sec-2"></section></div>
         </main>
     </body>
