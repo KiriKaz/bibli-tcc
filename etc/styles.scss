@@ -1,0 +1,257 @@
+@import 'shadows';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    z-index: 3;
+    position: sticky;
+    background-color: #5555ff;
+    height: 50px;
+    width: 100vw;
+    top: 0px;
+    transition: all .2s ease-in-out;
+    box-shadow: $dp3;
+    .logo {
+        transition: .2s ease-in-out;
+        position: relative;
+        height: 40px;
+        left: 30px;
+        margin: 5px 20px;
+        &.toggled {
+            left: 0px;
+        }
+    }
+    &.scrolled {
+        height: 35px;
+        .logo {
+            // transition: .2s ease-in-out;
+            height: 30px;
+            margin: 2.5px 20px;
+            left: 15px;
+            &.toggled {
+                left: 0px;
+                margin: 2.5px 10px;
+            }
+        }
+        .btn#show {
+            padding: 5px;
+            i {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+            }
+        }
+    }
+}
+
+body {
+    // background-color: #9c8b7a;
+    overflow-x: hidden;
+    background-color: #b1ccec;
+}
+
+main {
+    z-index: 1;
+    .shadowed {
+        filter: $ddp2;
+        section#sec-1 {
+            z-index: inherit;
+            background-color: #81b1ea;
+            clip-path: polygon(88% 0, 10% 26%, 0 100%, 0 0);
+            height: 65vh;
+            width: 100vw;
+        }
+        section#sec-2 {
+            z-index: inherit;
+            background-color: #81b1ea;
+            clip-path: polygon(90% 31%, 100% 0, 100% 100%, 0 100%, 30% 49%);
+            height: 65vh;
+            width: 100vw;
+            top: 55vh;
+        }
+    }
+    #intro01 {
+        position: absolute;
+        color: #555555;
+        font-family: 'Muli', sans-serif;
+        top: 20vh;
+        right: 10vw;
+        font-size: 48pt;
+    }
+    #intro01-01 {
+        position: absolute;
+        color: #777777;
+        font-family: 'Raleway', sans-serif;
+        top: 30vh;
+        left: 55vw;
+        width: 36vw;
+        font-size: 24pt;
+    }
+    #monitor {
+        position: absolute;
+        top: 55vh;
+        left: 20vw;
+        width: 350px;
+        height: 350px;
+        opacity: 0;
+        transition: .8s ease-in-out;
+        &.toggled {
+            opacity: 1;
+            top: 45vh;
+            left: 18vw;
+        }
+    }
+    #cursor {
+        position: absolute;
+        top: 75vh;
+        left: 40vw;
+        opacity: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+i {
+    font-size: 18pt;
+}
+
+#hamburguer-menu {
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    left: -350px;
+    background-color: #797979;
+    width: 250px;
+    height: calc(100vh - 50px);
+    transition: .3s ease;
+    box-shadow: $dp3;
+    &.toggled {
+        left: 0px;
+    }
+    &.scrolled {
+        top: 35px;
+        height: calc(100vh - 35px);
+    }
+    & header {
+        width: 212px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+        background-color: #999999;
+    }
+}
+
+li {
+    display: flex;
+    // flex-direction: row-reverse;
+    border-top: 1px black solid;
+    padding: 5px 0px 5px 20px;
+    list-style: none;
+    align-items: center;
+    cursor: pointer;
+    transition: .15s ease-in-out; // , padding .15s ease-in-out;
+    i {
+        min-width: 25px;
+        text-align: center;
+    }
+    span {
+        margin: 15px;
+    }
+    &:hover {
+        background-color: #575757;
+        box-shadow: $dp2;
+    }
+}
+
+input {
+    display: none;
+}
+
+.btn {
+    position: absolute;
+    transition: all .3s ease, opacity .1s ease, left .3s ease-out;
+    z-index: 2;
+    cursor: pointer;
+    i {
+        transition: .2s ease-in-out;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+    }
+    &#show {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+        padding: 7.5px;
+        &:hover {
+            color: #333333;
+            // box-shadow: $dp4; Looks like garbage
+        }
+    }
+    &#hide {
+        opacity: 0;
+        right: 0px;
+        background-color: #575757;
+        pointer-events: none;
+        height: 38px;
+        width: 38px;
+        & i {
+            line-height: 38px;
+        }
+        &:hover {
+            background-color: #373737;
+            box-shadow: $dp4;
+        }
+    }
+
+    &.toggled#hide {
+        opacity: 1;
+        pointer-events: auto;
+        // transform: translateX(-38px);
+    }
+    &.toggled#show {
+        opacity: 0;
+        left: -30px;
+        pointer-events: none;
+    }
+}
+
+@mixin preloader() {
+    z-index: 999;
+    position: fixed;
+    content: ' ';
+    transition: all .35s ease-in-out;
+    width:  50%;
+    height: 100%;
+    opacity: 1;
+    background-color: #888888;
+}
+
+.preloader {
+    &:before {
+        @include preloader();
+        left: 0px;
+    }
+    &:after {
+        @include preloader();
+        right: 0px;
+    }
+    &.complete:before {
+        left: -50%;
+        pointer-events: none;
+        opacity: 0;
+    }
+    &.complete:after {
+        right: -50%;
+        pointer-events: none;
+        opacity: 0;
+    }
+}
