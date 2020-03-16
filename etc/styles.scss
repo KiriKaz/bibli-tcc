@@ -14,7 +14,7 @@ nav {
     width: 100vw;
     top: 0px;
     transition: all .2s ease-in-out;
-    box-shadow: $dp3;
+    // box-shadow: $dp3; Nao parece bonito
     .logo {
         transition: .2s ease-in-out;
         position: relative;
@@ -34,7 +34,23 @@ nav {
             color: #333333;
             // box-shadow: $dp4; Looks like garbage
         }
+        &.toggled {
+            opacity: 0;
+            left: -30px;
+            pointer-events: none;
+        }
     }
+    .btn#log {
+        top: 0px;
+        right: 0px;
+        padding: 7.5px;
+        padding-right: 27.5px;
+        &:hover {
+            color: #333333;
+            // box-shadow: $dp4; Looks like garbage
+        }
+    }
+
     &.scrolled {
         height: 35px;
         .logo {
@@ -185,6 +201,26 @@ i {
         line-height: 38px;
         background-color: #999999;
     }
+    .btn#hide {
+        opacity: 0;
+        right: 0px;
+        background-color: #575757;
+        pointer-events: none;
+        height: 38px;
+        width: 38px;
+        & i {
+            line-height: 38px;
+        }
+        &:hover {
+            background-color: #373737;
+            box-shadow: $dp4;
+        }
+        &.toggled {
+            opacity: 1;
+            pointer-events: auto;
+            // transform: translateX(-38px);
+        }
+    }
 }
 
 li {
@@ -224,32 +260,6 @@ input {
         height: 35px;
         line-height: 35px;
         text-align: center;
-    }
-    &#hide {
-        opacity: 0;
-        right: 0px;
-        background-color: #575757;
-        pointer-events: none;
-        height: 38px;
-        width: 38px;
-        & i {
-            line-height: 38px;
-        }
-        &:hover {
-            background-color: #373737;
-            box-shadow: $dp4;
-        }
-    }
-
-    &.toggled#hide {
-        opacity: 1;
-        pointer-events: auto;
-        // transform: translateX(-38px);
-    }
-    &.toggled#show {
-        opacity: 0;
-        left: -30px;
-        pointer-events: none;
     }
 }
 

@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="etc/styles.css">
 
         <!-- Scripts -->
+        <script defer src="etc/anim.js"></script>
         <script defer src="etc/main.js"></script>
         <title>Bibli</title>
     </head>
@@ -25,7 +26,7 @@
         <nav id="nav">
             <div class="btn" id="show"><i class="fas fa-bars"></i></div>
             <img class="logo" src="etc/image_assets/XL-logo.svg" alt="Logotipo">
-            <a href="login.php"><i class="fas fa-sign-in-alt" id="btn-log"></i></a>
+            <a href="login.php" class="btn" id="log"><i class="fas fa-sign-in-alt"></i></a>
         </nav>
         <div id="hamburguer-menu">
             <header>

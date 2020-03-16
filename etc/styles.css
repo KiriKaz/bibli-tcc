@@ -15,8 +15,6 @@ nav {
   top: 0px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  -webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 3px 3px rgba(0, 0, 0, 0.14);
-          box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 3px 3px rgba(0, 0, 0, 0.14);
 }
 
 nav .logo {
@@ -40,6 +38,23 @@ nav .btn#show {
 }
 
 nav .btn#show:hover {
+  color: #333333;
+}
+
+nav .btn#show.toggled {
+  opacity: 0;
+  left: -30px;
+  pointer-events: none;
+}
+
+nav .btn#log {
+  top: 0px;
+  right: 0px;
+  padding: 7.5px;
+  padding-right: 27.5px;
+}
+
+nav .btn#log:hover {
   color: #333333;
 }
 
@@ -207,6 +222,30 @@ i {
   background-color: #999999;
 }
 
+#hamburguer-menu .btn#hide {
+  opacity: 0;
+  right: 0px;
+  background-color: #575757;
+  pointer-events: none;
+  height: 38px;
+  width: 38px;
+}
+
+#hamburguer-menu .btn#hide i {
+  line-height: 38px;
+}
+
+#hamburguer-menu .btn#hide:hover {
+  background-color: #373737;
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+#hamburguer-menu .btn#hide.toggled {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -256,36 +295,6 @@ input {
   height: 35px;
   line-height: 35px;
   text-align: center;
-}
-
-.btn#hide {
-  opacity: 0;
-  right: 0px;
-  background-color: #575757;
-  pointer-events: none;
-  height: 38px;
-  width: 38px;
-}
-
-.btn#hide i {
-  line-height: 38px;
-}
-
-.btn#hide:hover {
-  background-color: #373737;
-  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
-          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
-}
-
-.btn.toggled#hide {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.btn.toggled#show {
-  opacity: 0;
-  left: -30px;
-  pointer-events: none;
 }
 
 .preloader:before {
