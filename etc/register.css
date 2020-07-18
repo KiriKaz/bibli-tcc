@@ -2,18 +2,17 @@ body {
   background-color: #bdc3c7 !important;
 }
 
-.login_section h1 {
+.register_section h1 {
   color: white;
 }
 
-.login_section {
+.register_section {
   position: absolute;
   background-color: #2980b9;
   -webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 3px 3px rgba(0, 0, 0, 0.14);
           box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 3px 3px rgba(0, 0, 0, 0.14);
   border-radius: 3px;
   padding: 50px;
-  height: 32.5vh;
   width: 50vh;
   min-width: 350px;
   min-height: 320px;
@@ -27,7 +26,7 @@ body {
   z-index: 90;
 }
 
-.login_section input[type="text"], .login_section input[type="password"] {
+.register_section input[type="text"], .register_section input[type="password"] {
   background: #34495e;
   border: 2px #95a5a6 solid;
   border-radius: 25px;
@@ -42,12 +41,12 @@ body {
   transition: 150ms;
 }
 
-.login_section input[type="text"]:focus, .login_section input[type="password"]:focus {
+.register_section input[type="text"]:focus, .register_section input[type="password"]:focus {
   width: 100%;
   border: 2px #3498db solid;
 }
 
-.login_section input[type="submit"] {
+.register_section input[type="submit"] {
   background: #34495e;
   border: 2px #95a5a6 solid;
   border-radius: 25px;
@@ -63,7 +62,7 @@ body {
   transition: 150ms;
 }
 
-.login_section input[type="submit"]:hover {
+.register_section input[type="submit"]:hover {
   width: 100%;
   background: #95a5a6;
 }
@@ -272,4 +271,4 @@ body {
     opacity: .1;
   }
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=register.css.map */

@@ -4,20 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login</title>
+		<title>Registrar</title>
 
-		<link rel="stylesheet" href="etc/login.css">
+		<link rel="stylesheet" href="etc/register.css">
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
 	<body>
 		<div id="containing">
-			<form class="login_section" method="POST">
-				<h1> Login </h1>
-				<input type="text" id="logUsername" name="username" placeholder="Nome de Usuário">
-				<input type="password" id="logPassword" name="password" placeholder="Senha">
-				<input type="submit" value="Login">
+			<form class="register_section" method="POST">
+				<h1> Registrar </h1>
+				<input type="text" id="username" name="username" placeholder="Nome de Usuário">
+				<input type="text" id="email" name="email" placeholder="Endereço de Email">
+				<input type="password" id="password" name="password" placeholder="Senha">
+				<input type="submit" value="Registrar">
 			</form>
 		</div>
 
@@ -41,11 +42,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<script>
-			$(".login_section").submit(function(event){
+			$(".register_section").submit(function(event){
 				event.preventDefault();
 				var username = $("#username").val();
 				var password = $("#password").val();
-				$.post('session_man.php', {username: username, password: password, action: 'login'})
+				var email = $("#email").val();
+				$.post('session_man.php', {username: username, email: email, password: password, action: 'register'})
 					.done(function(data) {
 						if(data.startsWith("#EXCEPTION#")) {
 							let erro = "Erro inesperado: ";
@@ -57,11 +59,13 @@
 							erro += "<?=$_SESSION['HANDLEDERROR'] ?? ''?>";
 							alert(erro);
 							console.log(data);
-						} else if(data.startsWith("#SUCCESS")){ 
+						} else if(data.startsWith("#SUCCESS#")){
+							let erro = "<?=$_SESSION['MESSAGE'] ?? ''?>";
+							alert(erro);
 							window.location.assign("..");
 						} else {
-							alert("Inesperado!")
-							alert(data)
+							alert("Inesperado!");
+							alert(data);
 						}
 					});
 			});

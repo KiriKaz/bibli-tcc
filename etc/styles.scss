@@ -41,6 +41,7 @@ nav {
         }
     }
     .btn#log {
+        display: inline-block;
         top: 0px;
         right: 0px;
         padding: 7.5px;
@@ -48,6 +49,10 @@ nav {
         &:hover {
             color: #333333;
             // box-shadow: $dp4; Looks like garbage
+        }
+        span#usernameDisplay {
+            display: inline-block;
+            vertical-align: middle;
         }
     }
 

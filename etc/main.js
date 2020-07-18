@@ -29,8 +29,12 @@ let scroll_function = function(e) {
     }
 };
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    pass    
+} else {
+    $(window).on('scroll', scroll_function);
+}
+
 [hide_button, show_button].forEach(function(button) {
     button.on('click', toggle_ham);
 })
-
-$(window).on('scroll', scroll_function);

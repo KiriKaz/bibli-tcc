@@ -48,6 +48,7 @@ nav .btn#show.toggled {
 }
 
 nav .btn#log {
+  display: inline-block;
   top: 0px;
   right: 0px;
   padding: 7.5px;
@@ -56,6 +57,11 @@ nav .btn#log {
 
 nav .btn#log:hover {
   color: #333333;
+}
+
+nav .btn#log span#usernameDisplay {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 nav.scrolled {

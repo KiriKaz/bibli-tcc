@@ -1,3 +1,4 @@
+<?php include_once 'includes/session.inc.php'?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,12 +27,22 @@
         <nav id="nav">
             <div class="btn" id="show"><i class="fas fa-bars"></i></div>
             <img class="logo" src="etc/image_assets/XL-logo.svg" alt="Logotipo">
-            <a href="login.php" class="btn" id="log"><i class="fas fa-sign-in-alt"></i></a>
+            <a href="login.php" class="btn" id="log"><span id="usernameDisplay"><?=$_SESSION['sessionid']?:""?></span><i class="fas fa-sign-in-alt"></i></a>
         </nav>
         <div id="hamburguer-menu">
             <header>
                 <div class="btn" id="hide"><i class="fas fa-times"></i></div>
-                HELLO!
+                <?php
+                if(!isset($_SESSION['sessionid'])) {
+                ?>
+                Boa noite!
+                <?php
+                } else {
+                ?>
+                Boa noite, <?=$_SESSION['sessionid']?>!
+                <?php
+                }
+                ?>
             </header>
             <ul>
                 <a href="#!"><li><i class="fas fa-home"></i><span>Início</span></li></a>
