@@ -27,7 +27,31 @@
         <nav id="nav">
             <div class="btn" id="show"><i class="fas fa-bars"></i></div>
             <img class="logo" src="etc/image_assets/XL-logo.svg" alt="Logotipo">
-            <a href="login.php" class="btn" id="log"><span id="usernameDisplay"><?=$_SESSION['sessionid']?:""?></span><i class="fas fa-sign-in-alt"></i></a>
+            <?php
+            if(!isset($_SESSION['sessionid'])) {
+            ?>
+            <a href="login.php" class="btn" id="log"><i class="fas fa-sign-in-alt"></i></a>
+            <?php
+            } else {
+            ?>
+            <div class="btn dropdown" id="log">
+                <a id="dropdown-toggle" data-toggle="dropdown">
+                    <?=$_SESSION['sessionid']?><i class="fas fa-angle-down"></i>
+                </a>
+                <ul id="dropdown-menu">
+                    <li id="logoutbtn"><a href="#">Logout</a></li>
+                <?php
+                if(isset($_SESSION['admin'])) {
+                ?>
+                    <li id="adminbtn"><a href="#">Admin</a></li>
+                <?php
+                }
+                ?>
+                </ul>
+            </div>
+            <?php
+            }
+            ?>
         </nav>
         <div id="hamburguer-menu">
             <header>
@@ -45,16 +69,16 @@
                 ?>
             </header>
             <ul>
-                <a href="#!"><li><i class="fas fa-home"></i><span>Início</span></li></a>
-                <a href="#!"><li><i class="far fa-file"></i><span>Classes</span></li></a>
-                <a href="#!"><li><i class="far fa-id-badge"></i><span>Sobre a Bibli</span></li></a>
-                <a href="#!"><li><i class="far fa-address-book"></i><span>Contato</span></li></a>
+                <a href="#!"><li class="hamli" id="ham_home"><i class="fas fa-home"></i><span>Início</span></li></a>
+                <a href="#!"><li class="hamli" id="ham_class"><i class="far fa-file"></i><span>Classes</span></li></a>
+                <!-- <a href="#!"><li id="ham_about"><i class="far fa-id-badge"></i><span>Sobre a Bibli</span></li></a> -->
+                <a href="#!"><li class="hamli" id="ham_contact"><i class="far fa-address-book"></i><span>Contato</span></li></a>
             </ul>
         </div>
         <main>
             <div class="shadowed"><section id="sec-1"></section></div>
-            <h1 id="intro01">The sky above</h1>
-            <p id="intro01-01">the port was the color of television, tuned to a dead channel.</p>
+            <h1 id="intro01">Bibliotecha</h1>
+            <p id="intro01-01">Para você aprender, aprender, e aprender.</p>
             <div id="imagem01">
                 <img src="etc/image_assets/monitor.svg" alt="Um monitor." id="monitor">
                 <img src="etc/image_assets/cursor.svg" alt="Um cursor." id="cursor">

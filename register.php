@@ -60,8 +60,8 @@
 							alert(erro);
 							console.log(data);
 						} else if(data.startsWith("#SUCCESS#")){
-							let erro = "<?=$_SESSION['MESSAGE'] ?? ''?>";
-							alert(erro);
+							// let erro = "<?=$_SESSION['MESSAGE'] ?? ''?>";
+							// alert(erro);
 							window.location.assign("..");
 						} else {
 							alert("Inesperado!");

@@ -15,8 +15,8 @@
 		<div id="containing">
 			<form class="login_section" method="POST">
 				<h1> Login </h1>
-				<input type="text" id="logUsername" name="username" placeholder="Nome de Usuário">
-				<input type="password" id="logPassword" name="password" placeholder="Senha">
+				<input type="text" id="username" name="username" placeholder="Nome de Usuário">
+				<input type="password" id="password" name="password" placeholder="Senha">
 				<input type="submit" value="Login">
 			</form>
 		</div>
@@ -53,11 +53,14 @@
 							alert(erro);
 							console.log(data);
 						} else if(data.startsWith("#ERROR#")) {
-							let erro = "Erro: ";
-							erro += "<?=$_SESSION['HANDLEDERROR'] ?? ''?>";
+							let erro = "Erro: Usuário e/ou senha incorretos.";
+							// erro += "<?=$_SESSION['HANDLEDERROR'] ?? ''?>";
+							// erro += $.session("HANDLEDERROR");
 							alert(erro);
 							console.log(data);
-						} else if(data.startsWith("#SUCCESS")){ 
+						} else if(data.startsWith("#SUCCESS#")){ 
+							let erro = "<?=$_SESSION['MESSAGE'] ?? ''?>";
+							// alert(erro);
 							window.location.assign("..");
 						} else {
 							alert("Inesperado!")
